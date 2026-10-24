@@ -28,6 +28,7 @@ journalctl -u voice-gateway -u voice-brief -f
 
 ```bash
 curl -s http://127.0.0.1:8799/health    # JSON, 200 = ok, 503 = degraded
+curl -sf http://127.0.0.1:8799/health >/dev/null && echo OK   # для мониторинга (sf = не-2xx = ошибка)
 ```
 
 Отдаёт: uptime, число клиентов/сессий, состояние апстрима Али
